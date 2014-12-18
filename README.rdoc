@@ -1,3 +1,6 @@
 == README
 
-Cash Only is an app for tracking 
+Cash Only is an app for tracking debts between hungry users in towns that
+don't believe in debit or credit card transactions.
+
+---------------------------------------------------

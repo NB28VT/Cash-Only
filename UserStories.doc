@@ -1,0 +1,7 @@
+As a hungry user
+I want to sign up for Cash Only
+So I can track who I owe money to
+
+Acceptance requirements:
+  *A user must be able to create an account
+  *A user should get a notice saying they've succesfully created an account
