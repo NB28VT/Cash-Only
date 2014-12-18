@@ -5,3 +5,35 @@ So I can track who I owe money to
 Acceptance requirements:
   *A user must be able to create an account
   *A user should get a notice saying they've succesfully created an account
+  -------------------------------------------------------------------------
+
+  As vain user
+  I would like to add an avatar to my profile page
+  So people can see my pretty face
+
+  Acceptance requirements:
+    *A user should be able to add an avatar image for themselves.
+    *The image should be visible on the user's profile page
+
+  -------------------------------------------------------------------------
+
+  As a cheap user
+  I would like to make a list of all my friends
+  So I can bug them about owing me money
+
+  Acceptance requirements:
+    *A user should be able to see a list of all other users
+    *A user should be able to add users to their friend group
+
+    -------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+      -------------------------------------------------------------------------

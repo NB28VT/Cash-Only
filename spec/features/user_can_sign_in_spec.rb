@@ -1,7 +1,6 @@
 require 'rails_helper'
-require 'spec_helper'
 
-feature "User can create an account" do
+feature "User can sign into an account" do
 #
 # As a hungry user
 # I want to sign up for Cash Only
@@ -11,19 +10,37 @@ feature "User can create an account" do
 # *A user must be able to create an account
 # *A user should get a notice saying they've succesfully created an account
 
-  context "as a signed in user" do
-    let(:user){FactoryGirl.create(:user)}
-      before :each do
-        sign_in_as(user)
-      end
-    end
+  let!(:user) { FactoryGirl.create(:user) }
 
-    it "can see the dashboard page" do
+  scenario "as a signed in user" do
+      sign_in_as(user)
 
-      # expect to be on the page
+      expect(page).to have_content "Dashboard Page"
+  end
 
+  scenario 'sign in with invalid information doesn\' work' do
 
-    end
+    visit root_path
+    click_link 'Sign in'
 
+    fill_in "Email", with: 'wrong'
+    fill_in "Password", with: 'nope'
+    click_on "Log in"
+
+    expect(page).to have_content "Invalid email or password"
 
   end
+
+
+
+
+end
+
+
+# def sign_in_as(user)
+#   visit root_path
+#   click_link "Sign in"
+#   fill_in "Email", with: user.email
+#   fill_in "Password", with: user.password
+#   click_on "Log in"
+# end

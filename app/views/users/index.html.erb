@@ -1,0 +1,8 @@
+<h3>Find a friend!</h3>
+<% if @users %>
+  <% @users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+<% else %>
+  <h4>No other users present</h4>
+<% end %>
