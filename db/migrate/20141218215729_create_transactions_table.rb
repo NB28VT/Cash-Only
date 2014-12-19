@@ -1,5 +1,5 @@
 class CreateTransactionsTable < ActiveRecord::Migration
-  def up
+  def change
     create_table :transactions do |t|
       t.integer :payer_id, null: false
       t.integer :payee_id, null: false
@@ -10,8 +10,5 @@ class CreateTransactionsTable < ActiveRecord::Migration
     end
   end
 
-  def down
-    drop_table :transactions
-  end
 
 end

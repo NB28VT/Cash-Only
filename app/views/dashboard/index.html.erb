@@ -1,2 +1,11 @@
 <h1>Dashboard Page</h1>
 <%= link_to("Add transaction", new_transaction_path) %>
+
+<h2>Your Transactions</h2>
+<% @transactions.each do |t| %>
+  <ul>
+    <li>Payee: <%= t.payee.email %></li>
+    <li>Payer: <%= t.payee.email %></li>
+    <li>Amount: <%= t.amount %></li>
+  </ul>
+<% end %>

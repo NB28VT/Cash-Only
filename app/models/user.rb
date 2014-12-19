@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :transactions
+  has_many :credits, class_name: "Transaction", foreign_key: "payee_id"
+  has_many :debits, class_name: "Transaction", foreign_key: "payer_id"
 end

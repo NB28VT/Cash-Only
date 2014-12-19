@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-feature "User can see a list of other users" do
+feature "User can create a new transaction with another user" do
 
 # As a cheap user
 # I would like to search a list of other users
@@ -23,19 +23,25 @@ let!(:user3) { FactoryGirl.create(:user) }
     sign_in_as(user)
     click_link "Add transaction"
 
-    expect(page).to have_content "Create a new transaction"
+    expect(page).to have_content "Create a new IOU"
   end
 
-  scenario 'user can see list of all other users' do
+  scenario 'user can create a new transaction' do
     sign_in_as(user)
     click_link "Add transaction"
 
+    # save_and_open_page
 
 
+    find('#transaction_payer_id').find(:xpath, 'option[2]').select_option
+    find('#transaction_payee_id').find(:xpath, 'option[3]').select_option
+    fill_in "Amount", with: 5
+    click_button "Create"
 
+    save_and_open_page
 
-    expect(page).to have_content user3.email
-    expect(page).to have_content user2.email
+    expect(page).to have_content 5
+
 
   end
 
