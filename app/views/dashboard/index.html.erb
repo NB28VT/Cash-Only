@@ -2,10 +2,30 @@
 <%= link_to("Add transaction", new_transaction_path) %>
 
 <h2>Your Transactions</h2>
-<% @transactions.each do |t| %>
-  <ul>
-    <li>Payee: <%= t.payee.email %></li>
-    <li>Payer: <%= t.payee.email %></li>
-    <li>Amount: <%= t.amount %></li>
-  </ul>
-<% end %>
+
+
+
+<table class="large-12 columns">
+  <thead>
+    <tr>
+      <th width="100">Amount</th>
+      <th width="100">Date</th>
+      <th>Description</th>
+      <th width="150">Owed by</th>
+      <th width="150">Owed to</th>
+      <th width="150">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |t| %>
+      <tr>
+        <td><%= t.amount %></td>
+        <td><%= t.created_at %></td>
+        <td><%= t.description %></td>
+        <td><%= t.payer_id %></td>
+        <td><%= t.payee_id %></td>
+        <td><%= link_to "Delete", t, method: "delete", confirm: "Are you Sure?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,12 +1,10 @@
 class TransactionsController<ApplicationController
   def index
-
   end
 
   def new
     @users = User.all
     @transaction = Transaction.new
-
   end
 
   def create
@@ -15,6 +13,10 @@ class TransactionsController<ApplicationController
     redirect_to dashboard_index_path
   end
 
+  def destroy
+    Transaction.find(params[:id]).destroy
+    redirect_to dashboard_index_path
+  end
 
 
   private
