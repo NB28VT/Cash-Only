@@ -18,7 +18,6 @@ class TransactionsController<ApplicationController
     redirect_to dashboard_index_path
   end
 
-
   private
 
   def transaction_params
