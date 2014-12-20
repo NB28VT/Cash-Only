@@ -8,8 +8,49 @@
 </head>
 <body>
 
+<!-- ADD TOP BAR, WRAP CONTENT INSIDE -->
 
-  <div id= "user_nav">
+
+
+
+  <nav class ="top-bar" id ="user_nav">
+    <ul class="title-area">
+      <li class ="name">
+        <h1><%= link_to("Ca$h Only", root_path) %></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="left">
+        <li class="divider"></li>
+          <% if !current_user %>
+            <li class="active"><%= link_to("Sign in" , new_user_session_path) %></li>
+            <li><%= link_to("Sign up" , new_user_registration_path) %></li>
+          <% else %>
+            <li class="active"><%= link_to(current_user.email , dashboard_index_path) %></li>
+            <li><%= link_to("Sign out", destroy_user_session_path, method: :delete) %></li>
+            <li><a href="#">Main Item 2</a></li>
+
+
+          <% end %>
+        <li class="divider"></li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+
+  </nav>
+
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
+
+
+
+
+<!--
     <% if !current_user %>
     <div>
       <%= link_to("Sign up" , new_user_registration_path) %>
@@ -27,7 +68,7 @@
     <% end %>
 
   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p class="alert"><%= alert %></p> -->
 
 
 <%= yield %>

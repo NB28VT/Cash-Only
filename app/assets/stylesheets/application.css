@@ -12,4 +12,21 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+
+.button {
+  background-color: green;
+}
+
+.button, .home {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.left, li{
+  color: white;
+}

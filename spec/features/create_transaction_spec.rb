@@ -30,16 +30,13 @@ let!(:user3) { FactoryGirl.create(:user) }
     sign_in_as(user)
     click_link "Add transaction"
 
-    # save_and_open_page
 
 
     find('#transaction_payer_id').find(:xpath, 'option[2]').select_option
     find('#transaction_payee_id').find(:xpath, 'option[3]').select_option
     fill_in "Amount", with: 5
     click_button "Create"
-
-    save_and_open_page
-
+    
     expect(page).to have_content 5
 
 
