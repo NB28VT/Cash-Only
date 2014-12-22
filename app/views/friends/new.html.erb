@@ -1,0 +1,9 @@
+<h1>Create new friend group</h1>
+
+<%= form_for @friend_group, url: { action: "create"} do |f| %>
+  <p>
+    <%= f.label :group_name, "Group name" %>
+    <%= f.text_field :group_name %>
+  </p>
+    <%= f.submit "Create" %>
+<% end %>

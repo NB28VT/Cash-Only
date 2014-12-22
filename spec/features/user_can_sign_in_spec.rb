@@ -15,13 +15,14 @@ feature "User can sign into an account" do
   scenario "as a signed in user" do
       sign_in_as(user)
 
-      expect(page).to have_content "Dashboard Page"
+
+      expect(page).to have_content user.email
   end
 
   scenario 'sign in with invalid information doesn\' work' do
 
     visit root_path
-    click_link 'Sign in'
+    first(:link, 'Sign in').click
 
     fill_in "Email", with: 'wrong'
     fill_in "Password", with: 'nope'
@@ -30,9 +31,6 @@ feature "User can sign into an account" do
     expect(page).to have_content "Invalid email or password"
 
   end
-
-
-
 
 end
 

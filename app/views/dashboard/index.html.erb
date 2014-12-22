@@ -6,10 +6,10 @@
 
 
 <div class="row">
-  <div class="large-6 columns">
+  <div class="large-12 columns">
     <h1>Emma WATson</h1>
     <%= image_tag("http://i0.kym-cdn.com/photos/images/newsfeed/000/173/576/Wat8.jpg?1315930535", class: "profile-picture") %>
-    <h3 class="show-for-small">Emma WATson<hr/></h3>
+    <h3 class="show-for-small"><%= current_user.email %><hr/></h3>
     <div class="progress [small-# large-#] [secondary alert success] [radius round]">
       <span class="meter" style="width: 15%; background-color: green;"></span>
     </div>
@@ -24,30 +24,6 @@
   <div class="large-6 columns">
 
 
-
-    <div class="panel">
-      <h4 class="hide-for-small">Emma WATson <hr/></h4>
-      <h5 class="subheader">Emma really likes Chinese food. WAT? Chinese food. WAT? Environmental; open source youth human-centered design capacity building catalyst replicable. Fight against oppression breakthrough insights; inspire social change Action Against Hunger Bono.</h5>
-    </div>
-
-    <div class="row">
-      <div class="large-6 small-6 columns">
-        <div class="panel">
-          <h5>Header</h5>
-          <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-          <a href="#" class="small button">BUTTON TIME!</a>
-        </div>
-      </div>
-
-      <div class="large-6 small-6 columns">
-        <div class="panel">
-          <h5>Header</h5>
-          <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-          <a href="#" class="small button">BUTTON TIME!</a>
-        </div>
-      </div>
-
-    </div>
 
   </div>
   <%= link_to "Add transaction", new_transaction_path, class: "small-12 large-6 button" %>

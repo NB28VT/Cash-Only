@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :dashboard
   resources :users
   resources :transactions
+  resources :friends
 
 
 
