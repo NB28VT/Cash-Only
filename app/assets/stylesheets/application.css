@@ -50,14 +50,11 @@ li.left,{
   color: white;
 }
 
-.profile {
-  width: 50%;
-  float: left;
-}
+
 
 
 .profile-picture {
-  display: block;
+  display: inline-block;
   width: 200px;
   height: 200px;
   margin: 1em auto;

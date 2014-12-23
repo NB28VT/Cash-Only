@@ -12,4 +12,15 @@ FactoryGirl.define do
 
   end
 
+
+
+  factory :friend do
+    sequence :group_name do |u|
+      "The Awesome show#{u}"
+    end
+  end
+
+
+
+
 end

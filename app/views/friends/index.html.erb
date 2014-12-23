@@ -1,3 +1,8 @@
 <h1>Friends</h1>
 
 <%= link_to "Add new friend group", new_friend_path, class: "small-12 large-6 button" %>
+
+<% @groups.each do |group| %>
+  <li><%= link_to  group.group_name, group %></li>
+
+<% end %>

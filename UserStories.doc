@@ -26,6 +26,18 @@ Acceptance requirements:
     *A user should be able to add users to their friend group
 
     -------------------------------------------------------------------------
+  As a social user
+  I would like to be able to join a friend group
+  So that I can track IOUs with my friends
+
+  Acceptance requirements:
+    *A user should be able to visit a friend group
+    *A user should be able to join a friend group
+
+    --------------------------------------------------------------------------
+
+
+
 
 
 

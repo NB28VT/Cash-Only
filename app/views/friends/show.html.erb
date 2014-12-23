@@ -1,1 +1,14 @@
 <h1><%= @friend_group.group_name %></h1>
+
+
+<!--  Users is not being picked up-->
+<% @friend_group.users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+
+
+<%= form_for @membership, url: { controller: "memberships", action: "create" } do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :friend_id, value: @friend_group.id %>
+  <%= f.submit "Join this group!" %>
+<% end %>

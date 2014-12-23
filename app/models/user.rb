@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :credits, class_name: "Transaction", foreign_key: "payee_id"
   has_many :debits, class_name: "Transaction", foreign_key: "payer_id"
+  has_one :membership
+  has_one :friend, through: :membership
+
 end

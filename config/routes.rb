@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :transactions
   resources :friends
+  resources :memberships
 
 
 

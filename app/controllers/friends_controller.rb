@@ -1,7 +1,7 @@
 class FriendsController<ApplicationController
   before_filter :authenticate_user!
   def index
-
+    @groups = Friend.all
   end
 
   def new
@@ -19,6 +19,7 @@ class FriendsController<ApplicationController
 
   def show
     @friend_group = Friend.find(params[:id])
+    @membership = Membership.new
   end
 
 

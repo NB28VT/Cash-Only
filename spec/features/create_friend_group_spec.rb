@@ -40,7 +40,7 @@ feature "User can create a new friend group" do
     expect(page).to have_content "Create new friend group"
   end
 
-  scenario 'user can create a new freind group' do
+  scenario 'user can create a new friend group' do
     sign_in_as(user)
 
     click_link "Friends"
@@ -51,11 +51,6 @@ feature "User can create a new friend group" do
 
     expect(page).to have_content "The Donkey Show"
   end
-
-
-
-
-
 
 
 end

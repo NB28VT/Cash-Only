@@ -3,6 +3,7 @@ class DashboardController<ApplicationController
 
   def index
     @transactions = Transaction.all
+    @friend_group = current_user.friend
   end
 
 end

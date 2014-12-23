@@ -1,0 +1,51 @@
+<div class="large-12 colummns transaction">
+
+  <h3>Your transactions</h3>
+
+  <table class="large-12 columns">
+    <thead>
+      <tr>
+        <th width="100">Amount</th>
+        <th width="100">Date</th>
+        <th>Description</th>
+        <th width="150">Owed by</th>
+        <th width="150">Owed to</th>
+        <th width="150">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <h3>Debts</h3>
+        <% if @user.debits != nil %>
+          <% @user.debits.each do |t| %>
+            <tr>
+              <td><%= t.amount %></td>
+              <td><%= t.created_at %></td>
+              <td><%= t.description %></td>
+              <td><%= t.payer_id %></td>
+              <td><%= t.payee_id %></td>
+              <td><%= link_to "Delete", t, method: "delete", confirm: "Are you Sure?" %></td>
+            </tr>
+          <% end %>
+        <% else %>
+          <h5>No debits found</h5>
+        <% end %>
+      </tbody>
+      <tbody>
+        <h3>Credits</h3>
+        <% if @user.credits %>
+          <% @user.credits.each do |t| %>
+            <tr>
+              <td><%= t.amount %></td>
+              <td><%= t.created_at %></td>
+              <td><%= t.description %></td>
+              <td><%= t.payer_id %></td>
+              <td><%= t.payee_id %></td>
+              <td><%= link_to "Delete", t, method: "delete", confirm: "Are you Sure?" %></td>
+            </tr>
+          <% end %>
+        <% else %>
+          <h5>No credits found</h5>
+        <% end %>
+      </tbody>
+  </table>
+</div>
