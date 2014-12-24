@@ -36,7 +36,7 @@ let!(:user3) { FactoryGirl.create(:user) }
     find('#transaction_payee_id').find(:xpath, 'option[3]').select_option
     fill_in "Amount", with: 5
     click_button "Create"
-    
+
     expect(page).to have_content 5
 
 

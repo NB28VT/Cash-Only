@@ -45,7 +45,6 @@ feature "User can join a friend group" do
 
     click_link "Friends"
     click_link friend.group_name
-    save_and_open_page
 
     expect(page).to have_content(user.email)
   end

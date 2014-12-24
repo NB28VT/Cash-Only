@@ -15,7 +15,6 @@ feature "User can sign into an account" do
   scenario "as a signed in user" do
       sign_in_as(user)
 
-
       expect(page).to have_content user.email
   end
 
@@ -31,6 +30,7 @@ feature "User can sign into an account" do
     expect(page).to have_content "Invalid email or password"
 
   end
+
 
 end
 
